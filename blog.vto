@@ -1,0 +1,14 @@
+---
+title: Blog Posts
+description: Cevdet's Blog Posts that includes insights on web dev, UX & design. Conversational tone, industry trends & a touch of humor.
+---
+
+<h1>Blog Posts</h1>
+<p>Stay up-to-date with my latest posts using my <a href="/blog.rss">RSS Feed</a> or <a href="/blog.json">JSONFeed</a>.</p>
+<ul>
+  {{ for post of search.pages("type=blog", "order data=desc") }}
+    <li>
+      <date datetime="{{ page.data.date.toISOString() }}">{{ post.data.date.toLocaleDateString("en-US") }}</date> - <a href="{{ post.data.url }}">{{ post.data.title }}</a>
+    </li>
+  {{ /for }}
+</ul>

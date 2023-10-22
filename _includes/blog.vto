@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{{ title }}</title>
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#f1c2d3">
+  <link rel="stylesheet" href="/style.css">
+  {{# SEO #}}
+  <meta name="description" content="{{ description }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ url |> url(true) }}">
+  <meta property="og:site_name" content="Ce's website">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  {{# <meta property="og:image" content=""> #}}
+  <link rel="canonical" href="{{ url |> url(true) }}">
+</head>
+<body class="container">
+  {{ include "components/nav.vto" }}
+  <main>
+    <article>
+      <h1>{{ title }}</h1>
+      <p><small>Published on {{ date.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" }) }}</small></p>
+      {{ content }}
+    </article>
+  </main>
+</body>
+</html>
