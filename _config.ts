@@ -4,7 +4,9 @@ import lightningCss from "lume/plugins/lightningcss.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import feed from "lume/plugins/feed.ts";
 
-const site = lume();
+const site = lume({
+  location: new URL("https://cevdet.pages.dev"),
+});
 
 // TODO: Will be deleted when lume 2.0 is released
 import vento from "lume/plugins/vento.ts";
